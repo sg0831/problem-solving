@@ -12,7 +12,7 @@ def solution( nums ):
 		# 불필요한 반복 방지 : 이미 선택 가능한 폰켓몬의 최대 종류 수를 모두 구했다면, 이하 과정 생략
 		if len(type) == limit:
 			break
-		# type리스트 안에 i값이 가 존재하지 않다면, type리스트에 i 추가
+		# type리스트 안에 i값이 존재하지 않다면, type리스트에 i 추가
 		if not i in type:
 			type.append( i )
 

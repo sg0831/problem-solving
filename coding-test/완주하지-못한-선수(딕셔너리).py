@@ -1,7 +1,7 @@
 # 딕셔너리만 사용
 # https://programmers.co.kr/learn/courses/30/lessons/42576#
 
-# 2021.05.14 / 정승균
+# 2021.05.22 / 정승균
 # 프로그래머스 Level-1 : 완주하지 못한 선수
 
 
@@ -40,7 +40,3 @@ def solution(participant, completion):
 		# p_dic[name]과 c_dic[name]가 가리키는 선수의 인원수가 다를 경우 정답
 		elif p_dic[ name ] != c_dic[ name ]:
 			return name
-
-participant = ["leo", "kiki", "eden"]
-completion = ["eden", "kiki"]
-print( solution(participant, completion) )
