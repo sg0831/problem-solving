@@ -1,0 +1,22 @@
+id_list - 유저 id 배열
+report - ["[신고한 유저] [신고 당한 유저]"]
+k - 신고 처리 기준 (1 이상의 정수)
+
+reportList - 신고자들이 누구를 신고했는지 담고 있는 딕셔너리
+targetList - 신고 당한 사람들이 누구에게 신고당했는지 담고 있는 딕셔너리
+resolve - 최종적으로 신고 처리가 확정된 사람들이 담겨 있는 배열
+
+
+1. 전달받은 report 배열을 순차적으로 도는 반복문 실행
+2. [i]번째 배열 요소의 값을 .split(" ") 메서드를 통해 단어별로 나누어 각각 [reporter, target] 변수에 저장
+3. reportList 딕셔너리에 키값 중 reporter가 있는지 확인
+	있으면 reportList[reporter].add(target)
+	targetList[target].add(reporter)
+	없으면 reportList[reporter] = set().add(target)
+	targetList[target] = set().add(reporter)
+반복문 종류 후
+4. targetList 딕셔너리를 반복문으로 돌면서 value값에 길이가 k 이상인 경우 해당 value값을 resolve에 append한다.
+반복문 종료 후
+5. id_list 배열을 반복문으로 돌면서 현재 [i]값이 reportList에 있는지 확인
+	있으면 resolve 배열을 도는 반복문을 실행하여 [j]의 값이 reportList[reporter]에 있는지 확인
+		있으면 answer[-1]+=1
